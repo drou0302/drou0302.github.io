@@ -12,12 +12,28 @@
   ],
   "education": [
     {
-      "degree": "[Degree]",
-      "field": "[Field]",
-      "institution": "[Institution]",
-      "location": "[Location]",
-      "start": "[Year]",
-      "end": "[Year]"
+      "degree": "PhD",
+      "institution": "University of Nottingham",
+      "location": "United Kingdon",
+      "start": "2016",
+      "end": "2019",
+      "field": "Chemical Biology"
+    },
+    {
+      "degree": "MSc",
+      "institution": "University of Girona",
+      "location": "Spain",
+      "start": "2015",
+      "end": "2016",
+      "field": "Molecular Biology and Biomedicine"
+    },
+    {
+      "degree": "BSc",
+      "institution": "University of Girona",
+      "location": "Spain",
+      "start": "2011",
+      "end": "2015",
+      "field": "Biology"
     }
   ],
   "publications": [
@@ -214,5 +230,11 @@
       "doi": "10.3390/molecules23123273"
     }
   ],
-  "skills": ["Enzyme immobilisation", "Industrial biocatalysis", "Flow chemistry", "AI/ML for protein engineering", "Startup building"]
+  "skills": [
+    "Enzyme immobilisation",
+    "Industrial biocatalysis",
+    "Flow chemistry",
+    "AI/ML for protein engineering",
+    "Startup building"
+  ]
 }
