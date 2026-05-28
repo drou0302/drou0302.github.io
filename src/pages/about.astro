@@ -2,40 +2,68 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About" description="About David Rourap — scientist, entrepreneur, founder of inseit.ch">
-  <div class="max-w-3xl mx-auto px-6 pt-16 pb-20">
-    <p class="text-sm font-medium text-blue-600 mb-3 uppercase tracking-wide">About</p>
-    <h1 class="text-3xl font-bold text-stone-900 mb-8">David Rourap</h1>
+  <div class="max-w-4xl mx-auto px-8 pt-28 pb-20">
 
-    <div class="prose prose-stone max-w-none space-y-6 text-stone-700 leading-relaxed">
-      <!-- Edit this section directly in the code, or convert to CMS-driven content later -->
-      <p class="text-lg">
-        I'm a scientist and entrepreneur based in Switzerland. I founded
-        <a href="https://www.inseit.ch" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">inseit.ch</a>,
-        where we're working on [describe what inseit does].
-      </p>
-
-      <h2 class="text-lg font-semibold text-stone-900 pt-4">Background</h2>
-      <p>
-        [Your scientific background, training, research focus — a few sentences.]
-      </p>
-
-      <h2 class="text-lg font-semibold text-stone-900 pt-4">What I'm working on</h2>
-      <p>
-        [Current projects, research directions, what inseit is building.]
-      </p>
-
-      <h2 class="text-lg font-semibold text-stone-900 pt-4">Writing</h2>
-      <p>
-        I write about science, building a startup, and things I find interesting.
-        <a href="/blog" class="text-blue-600 hover:underline">Read the blog →</a>
-      </p>
+    <div class="flex items-center gap-5 mb-16">
+      <span class="font-mono text-[10px] text-[#aaa59f] tracking-[0.25em] uppercase">About</span>
+      <div class="flex-1 h-px bg-[#ddd8ce]"></div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-stone-200 flex gap-6">
-      <a href="https://github.com/davidrourap" target="_blank" rel="noopener noreferrer" class="text-sm text-stone-500 hover:text-stone-900 transition-colors">GitHub ↗</a>
-      <a href="https://www.linkedin.com/in/davidrourap" target="_blank" rel="noopener noreferrer" class="text-sm text-stone-500 hover:text-stone-900 transition-colors">LinkedIn ↗</a>
-      <a href="https://www.inseit.ch" target="_blank" rel="noopener noreferrer" class="text-sm text-stone-500 hover:text-stone-900 transition-colors">inseit.ch ↗</a>
-      <a href="/cv" class="text-sm text-stone-500 hover:text-stone-900 transition-colors">CV →</a>
+    <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-16">
+
+      <div>
+        <h1 class="font-display text-[clamp(3rem,7vw,5.5rem)] font-semibold leading-[0.9] tracking-[-0.02em] text-[#0f0e0c] mb-10">
+          David<br/>Rourap
+        </h1>
+
+        <div class="space-y-5 font-serif text-[1.05rem] text-[#3a3530] leading-relaxed">
+          <p class="text-xl text-[#0f0e0c] font-semibold leading-snug">
+            Scientist and founder of <a href="https://www.inseit.ch" target="_blank" rel="noopener noreferrer"
+              class="text-[#2355b0] hover:underline">inseit.ch</a>.
+          </p>
+          <p>
+            [Your scientific background, training, research focus — a few sentences about where you come from and what you've studied or worked on.]
+          </p>
+          <p>
+            [What you're building at inseit — the problem you're solving, why it matters, what drives you.]
+          </p>
+          <p>
+            [What connects the two worlds for you — how science informs the startup or vice versa.]
+          </p>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-[#ddd8ce] flex gap-6">
+          <a href="https://github.com/drou0302" target="_blank" rel="noopener noreferrer"
+             class="font-mono text-[11px] tracking-[0.15em] uppercase text-[#aaa59f] hover:text-[#0f0e0c] transition-colors">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/davidrourap" target="_blank" rel="noopener noreferrer"
+             class="font-mono text-[11px] tracking-[0.15em] uppercase text-[#aaa59f] hover:text-[#0f0e0c] transition-colors">LinkedIn ↗</a>
+          <a href="https://www.inseit.ch" target="_blank" rel="noopener noreferrer"
+             class="font-mono text-[11px] tracking-[0.15em] uppercase text-[#aaa59f] hover:text-[#0f0e0c] transition-colors">inseit.ch ↗</a>
+          <a href="/cv" class="font-mono text-[11px] tracking-[0.15em] uppercase text-[#2355b0] hover:underline transition-colors">CV →</a>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+        <div>
+          <span class="font-mono text-[10px] text-[#aaa59f] tracking-[0.2em] uppercase block mb-3">Currently</span>
+          <div class="space-y-2">
+            <p class="font-serif text-sm text-[#3a3530]">CEO, <a href="https://www.inseit.ch" class="text-[#2355b0] hover:underline">inseit.ch</a></p>
+            <p class="font-serif text-sm text-[#3a3530]">[Research affiliation if any]</p>
+          </div>
+        </div>
+        <div class="h-px bg-[#ddd8ce]"></div>
+        <div>
+          <span class="font-mono text-[10px] text-[#aaa59f] tracking-[0.2em] uppercase block mb-3">Location</span>
+          <p class="font-serif text-sm text-[#3a3530]">Switzerland</p>
+        </div>
+        <div class="h-px bg-[#ddd8ce]"></div>
+        <div>
+          <span class="font-mono text-[10px] text-[#aaa59f] tracking-[0.2em] uppercase block mb-3">Writing</span>
+          <a href="/blog" class="font-mono text-[11px] tracking-[0.15em] uppercase text-[#2355b0] hover:underline">Read the blog →</a>
+        </div>
+      </aside>
+
     </div>
   </div>
 </BaseLayout>

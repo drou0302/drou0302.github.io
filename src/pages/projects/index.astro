@@ -5,56 +5,64 @@ import { getCollection } from 'astro:content';
 const allProjects = (await getCollection('projects'))
   .sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
 
-const statusLabel: Record<string, string> = {
-  active: '● Active',
-  completed: '✓ Completed',
-  paused: '⏸ Paused',
+const statusDot: Record<string, string> = {
+  active:    '●',
+  completed: '✓',
+  paused:    '◐',
 };
 const statusColor: Record<string, string> = {
-  active: 'text-emerald-600',
-  completed: 'text-stone-400',
-  paused: 'text-amber-500',
-};
-
-const typeColors: Record<string, string> = {
-  research: 'bg-emerald-50 text-emerald-700',
-  startup: 'bg-blue-50 text-blue-700',
+  active:    'text-emerald-600',
+  completed: 'text-[#aaa59f]',
+  paused:    'text-amber-500',
 };
 ---
 <BaseLayout title="Projects" description="Research and startup projects by David Rourap">
-  <div class="max-w-3xl mx-auto px-6 pt-16 pb-20">
-    <p class="text-sm font-medium text-blue-600 mb-3 uppercase tracking-wide">Projects</p>
-    <h1 class="text-3xl font-bold text-stone-900 mb-2">Work</h1>
-    <p class="text-stone-500 mb-10">Research projects, startups, and side endeavors.</p>
+  <div class="max-w-4xl mx-auto px-8 pt-28 pb-20">
+
+    <div class="flex items-center gap-5 mb-6">
+      <span class="font-mono text-[10px] text-[#aaa59f] tracking-[0.25em] uppercase">Work</span>
+      <div class="flex-1 h-px bg-[#ddd8ce]"></div>
+    </div>
+
+    <h1 class="font-display text-[clamp(3rem,7vw,5rem)] font-semibold leading-[0.9] tracking-[-0.02em] text-[#0f0e0c] mb-4">
+      Projects
+    </h1>
+    <p class="font-serif text-[#7a7570] mb-14">Research, ventures, and side endeavors.</p>
 
     {allProjects.length === 0 ? (
-      <p class="text-stone-400 text-sm">No projects yet — add them via the CMS at <a href="/admin" class="text-blue-600 hover:underline">/admin</a>.</p>
+      <p class="font-serif text-[#aaa59f]">Add projects via <a href="/admin" class="text-[#2355b0] hover:underline">/admin</a>.</p>
     ) : (
       <div class="space-y-4">
         {allProjects.map(project => (
-          <article class="bg-white border border-stone-200 rounded-lg p-5 hover:border-blue-200 hover:shadow-sm transition-all">
-            <div class="flex items-start justify-between gap-4">
-              <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class={`text-xs font-medium px-2 py-0.5 rounded-full ${typeColors[project.data.type]}`}>
-                    {project.data.type}
-                  </span>
-                  <span class={`text-xs font-medium ${statusColor[project.data.status]}`}>
-                    {statusLabel[project.data.status]}
-                  </span>
+          <article class="group bg-[#faf7f2] border border-[#ddd8ce] hover:bg-white hover:border-[#c0b8ac] transition-all">
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-6">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class={`font-mono text-[10px] tracking-[0.15em] uppercase px-2 py-0.5 border
+                      ${project.data.type === 'startup' ? 'text-blue-700 bg-blue-50 border-blue-200' : 'text-emerald-700 bg-emerald-50 border-emerald-200'}`}>
+                      {project.data.type}
+                    </span>
+                    <span class={`font-mono text-[10px] ${statusColor[project.data.status]}`}>
+                      {statusDot[project.data.status]} {project.data.status}
+                    </span>
+                  </div>
+
+                  <h2 class="font-display text-[1.6rem] font-semibold text-[#0f0e0c] leading-tight mb-2 group-hover:text-[#2355b0] transition-colors">
+                    {project.data.link ? (
+                      <a href={project.data.link} target="_blank" rel="noopener noreferrer">
+                        {project.data.title} <span class="text-[#aaa59f] text-lg">↗</span>
+                      </a>
+                    ) : project.data.title}
+                  </h2>
+
+                  <p class="font-serif text-sm text-[#5a5550] leading-relaxed">{project.data.description}</p>
                 </div>
-                <h2 class="font-medium text-stone-900 mb-1.5">
-                  {project.data.link ? (
-                    <a href={project.data.link} target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors">
-                      {project.data.title} ↗
-                    </a>
-                  ) : project.data.title}
-                </h2>
-                <p class="text-sm text-stone-500">{project.data.description}</p>
+
+                {project.data.year && (
+                  <span class="font-mono text-[11px] text-[#aaa59f] shrink-0 mt-1">{project.data.year}</span>
+                )}
               </div>
-              {project.data.year && (
-                <span class="text-sm text-stone-400 shrink-0">{project.data.year}</span>
-              )}
             </div>
           </article>
         ))}

@@ -5,59 +5,61 @@ import { getCollection } from 'astro:content';
 const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const categories = ['all', 'science', 'startup', 'personal'] as const;
-
 const categoryColors: Record<string, string> = {
-  science: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  startup: 'bg-blue-50 text-blue-700 border-blue-200',
-  personal: 'bg-amber-50 text-amber-700 border-amber-200',
+  science:  'text-emerald-700 bg-emerald-50 border-emerald-200',
+  startup:  'text-blue-700 bg-blue-50 border-blue-200',
+  personal: 'text-amber-700 bg-amber-50 border-amber-200',
 };
 ---
 <BaseLayout title="Blog" description="Writing on science, startups, and life by David Rourap">
-  <div class="max-w-3xl mx-auto px-6 pt-16 pb-20">
-    <p class="text-sm font-medium text-blue-600 mb-3 uppercase tracking-wide">Blog</p>
-    <h1 class="text-3xl font-bold text-stone-900 mb-2">Writing</h1>
-    <p class="text-stone-500 mb-10">Science, startups, and everything in between.</p>
+  <div class="max-w-4xl mx-auto px-8 pt-28 pb-20">
 
-    <!-- Category filter (client-side via data attributes) -->
-    <div class="flex gap-2 mb-8 flex-wrap" id="filters">
-      {categories.map(cat => (
+    <div class="flex items-center gap-5 mb-6">
+      <span class="font-mono text-[10px] text-[#aaa59f] tracking-[0.25em] uppercase">Writing</span>
+      <div class="flex-1 h-px bg-[#ddd8ce]"></div>
+    </div>
+
+    <h1 class="font-display text-[clamp(3rem,7vw,5rem)] font-semibold leading-[0.9] tracking-[-0.02em] text-[#0f0e0c] mb-4">
+      Blog
+    </h1>
+    <p class="font-serif text-[#7a7570] mb-12">Science, startups, and everything in between.</p>
+
+    <!-- Filter -->
+    <div class="flex gap-2 mb-10 flex-wrap" id="filters">
+      {(['all', 'science', 'startup', 'personal'] as const).map(cat => (
         <button
           data-filter={cat}
-          class={`text-xs font-medium px-3 py-1.5 rounded-full border transition-all cursor-pointer
-            ${cat === 'all' ? 'bg-stone-900 text-white border-stone-900' : 'bg-white text-stone-500 border-stone-200 hover:border-stone-400'}`}
+          class={`font-mono text-[10px] tracking-[0.15em] uppercase px-4 py-2 border transition-all cursor-pointer
+            ${cat === 'all' ? 'bg-[#0f0e0c] text-[#f4efe5] border-[#0f0e0c]' : 'bg-transparent text-[#7a7570] border-[#ddd8ce] hover:border-[#0f0e0c] hover:text-[#0f0e0c]'}`}
         >
-          {cat === 'all' ? 'All' : cat.charAt(0).toUpperCase() + cat.slice(1)}
+          {cat === 'all' ? 'All' : cat}
         </button>
       ))}
     </div>
 
     {allPosts.length === 0 ? (
-      <p class="text-stone-400 text-sm">No posts yet — check back soon.</p>
+      <p class="font-serif text-[#aaa59f]">No posts yet — check back soon.</p>
     ) : (
-      <div class="space-y-3" id="posts">
-        {allPosts.map(post => {
+      <div id="posts" class="border border-[#ddd8ce]">
+        {allPosts.map((post, i) => {
           const slug = post.id.replace(/\.mdx?$/, '');
           return (
-            <article data-category={post.data.category}>
-              <a href={`/blog/${slug}`} class="block group">
-                <div class="bg-white border border-stone-200 rounded-lg px-5 py-4 hover:border-blue-200 hover:shadow-sm transition-all">
-                  <div class="flex items-start justify-between gap-4">
-                    <div class="flex-1 min-w-0">
-                      <h2 class="font-medium text-stone-900 group-hover:text-blue-600 transition-colors mb-1">
-                        {post.data.title}
-                      </h2>
-                      <p class="text-sm text-stone-500 line-clamp-1">{post.data.description}</p>
-                    </div>
-                    <div class="shrink-0 flex flex-col items-end gap-2">
-                      <span class={`text-xs font-medium px-2 py-0.5 rounded-full border ${categoryColors[post.data.category]}`}>
-                        {post.data.category}
-                      </span>
-                      <span class="text-xs text-stone-400">
-                        {post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
-                      </span>
-                    </div>
-                  </div>
+            <article data-category={post.data.category} class="border-b border-[#ddd8ce] last:border-b-0">
+              <a href={`/blog/${slug}`} class="group flex items-center gap-6 px-6 py-5 bg-[#faf7f2] hover:bg-white transition-colors">
+                <span class="font-mono text-[10px] text-[#ccc8c0] w-5 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                <div class="flex-1 min-w-0">
+                  <h2 class="font-serif text-[1.05rem] font-semibold text-[#0f0e0c] group-hover:text-[#2355b0] transition-colors leading-snug">
+                    {post.data.title}
+                  </h2>
+                  <p class="font-serif text-sm text-[#7a7570] mt-0.5 line-clamp-1">{post.data.description}</p>
+                </div>
+                <div class="shrink-0 flex items-center gap-4">
+                  <span class={`font-mono text-[10px] tracking-[0.1em] uppercase px-2 py-0.5 border ${categoryColors[post.data.category]}`}>
+                    {post.data.category}
+                  </span>
+                  <span class="font-mono text-[10px] text-[#aaa59f] hidden sm:block w-28 text-right">
+                    {post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                  </span>
                 </div>
               </a>
             </article>
@@ -71,20 +73,21 @@ const categoryColors: Record<string, string> = {
 <script>
   const filters = document.getElementById('filters');
   const posts = document.querySelectorAll<HTMLElement>('#posts [data-category]');
+  const activeClass = ['bg-[#0f0e0c]', 'text-[#f4efe5]', 'border-[#0f0e0c]'];
+  const inactiveClass = ['bg-transparent', 'text-[#7a7570]', 'border-[#ddd8ce]'];
 
   filters?.addEventListener('click', (e) => {
     const btn = (e.target as HTMLElement).closest('[data-filter]') as HTMLElement | null;
     if (!btn) return;
-
     const filter = btn.dataset.filter!;
 
-    // Update button styles
-    filters.querySelectorAll('[data-filter]').forEach(b => {
-      (b as HTMLElement).className = 'text-xs font-medium px-3 py-1.5 rounded-full border transition-all cursor-pointer bg-white text-stone-500 border-stone-200 hover:border-stone-400';
+    filters.querySelectorAll<HTMLElement>('[data-filter]').forEach(b => {
+      b.classList.remove(...activeClass);
+      b.classList.add(...inactiveClass);
     });
-    btn.className = 'text-xs font-medium px-3 py-1.5 rounded-full border transition-all cursor-pointer bg-stone-900 text-white border-stone-900';
+    btn.classList.remove(...inactiveClass);
+    btn.classList.add(...activeClass);
 
-    // Show/hide posts
     posts.forEach(post => {
       post.style.display = (filter === 'all' || post.dataset.category === filter) ? '' : 'none';
     });

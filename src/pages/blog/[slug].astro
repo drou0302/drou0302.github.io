@@ -14,43 +14,51 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const categoryColors: Record<string, string> = {
-  science: 'bg-emerald-50 text-emerald-700',
-  startup: 'bg-blue-50 text-blue-700',
-  personal: 'bg-amber-50 text-amber-700',
+  science:  'text-emerald-700 bg-emerald-50 border-emerald-200',
+  startup:  'text-blue-700 bg-blue-50 border-blue-200',
+  personal: 'text-amber-700 bg-amber-50 border-amber-200',
 };
 ---
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <article class="max-w-3xl mx-auto px-6 pt-16 pb-20">
-    <!-- Post header -->
-    <header class="mb-12">
-      <div class="flex items-center gap-3 mb-4">
-        <span class={`text-xs font-medium px-2.5 py-1 rounded-full ${categoryColors[post.data.category]}`}>
+  <article class="max-w-3xl mx-auto px-8 pt-28 pb-20">
+
+    <!-- Header -->
+    <header class="mb-14">
+      <div class="flex items-center gap-4 mb-8">
+        <a href="/blog" class="font-mono text-[10px] tracking-[0.2em] uppercase text-[#aaa59f] hover:text-[#0f0e0c] transition-colors">← Blog</a>
+        <div class="flex-1 h-px bg-[#ddd8ce]"></div>
+        <span class={`font-mono text-[10px] tracking-[0.1em] uppercase px-2 py-0.5 border ${categoryColors[post.data.category]}`}>
           {post.data.category}
         </span>
-        <span class="text-sm text-stone-400">
-          {post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
-        </span>
       </div>
-      <h1 class="text-3xl font-bold text-stone-900 leading-tight mb-4">
+
+      <h1 class="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1.0] tracking-[-0.02em] text-[#0f0e0c] mb-6">
         {post.data.title}
       </h1>
-      <p class="text-lg text-stone-500">{post.data.description}</p>
+
+      <p class="font-serif text-xl text-[#7a7570] leading-relaxed mb-6">{post.data.description}</p>
+
+      <span class="font-mono text-[11px] text-[#aaa59f] tracking-[0.1em]">
+        {post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+      </span>
     </header>
 
-    <!-- Post body -->
-    <div class="prose prose-stone prose-lg max-w-none
-      prose-headings:font-semibold prose-headings:text-stone-900
-      prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-      prose-code:bg-stone-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-normal
-      prose-pre:bg-stone-900 prose-pre:text-stone-100
-      prose-blockquote:border-blue-400 prose-blockquote:text-stone-600
+    <div class="h-px bg-[#ddd8ce] mb-14"></div>
+
+    <!-- Body -->
+    <div class="prose prose-stone max-w-none
+      prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight
+      prose-h2:text-[2rem] prose-h3:text-[1.5rem]
+      prose-p:font-serif prose-p:text-[1.05rem] prose-p:leading-relaxed prose-p:text-[#2a2520]
+      prose-a:text-[#2355b0] prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-[#0f0e0c] prose-strong:font-semibold
+      prose-blockquote:border-l-[#2355b0] prose-blockquote:not-italic prose-blockquote:text-[#5a5550]
+      prose-code:font-mono prose-code:text-[0.85em] prose-code:bg-[#eeeae0] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-none prose-code:text-[#0f0e0c]
+      prose-pre:bg-[#0f0e0c] prose-pre:rounded-none
+      prose-hr:border-[#ddd8ce]
     ">
       <Content />
     </div>
 
-    <!-- Footer nav -->
-    <div class="mt-16 pt-8 border-t border-stone-200">
-      <a href="/blog" class="text-sm text-stone-500 hover:text-stone-900 transition-colors">← Back to blog</a>
-    </div>
   </article>
 </BaseLayout>
