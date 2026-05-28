@@ -3,8 +3,8 @@
  *
  * Setup:
  * 1. Create a GitHub OAuth App at https://github.com/settings/developers
- *    - Homepage URL: https://davidrourap.github.io
- *    - Callback URL: https://your-worker.workers.dev/callback
+ *    - Homepage URL: https://drou0302.github.io
+ *    - Callback URL: https://decap-oauth.drou0302.workers.dev/callback
  * 2. Set secrets: wrangler secret put GITHUB_CLIENT_ID
  *                 wrangler secret put GITHUB_CLIENT_SECRET
  * 3. Deploy: wrangler deploy
@@ -15,13 +15,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    const corsHeaders = {
-      'Access-Control-Allow-Origin': 'https://davidrourap.github.io',
-      'Access-Control-Allow-Methods': 'GET, OPTIONS',
-    };
-
     if (request.method === 'OPTIONS') {
-      return new Response(null, { status: 204, headers: corsHeaders });
+      return new Response(null, {
+        status: 204,
+        headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, OPTIONS' },
+      });
     }
 
     if (url.pathname === '/auth') {
@@ -34,16 +32,11 @@ export default {
 
     if (url.pathname === '/callback') {
       const code = url.searchParams.get('code');
-      if (!code) {
-        return new Response('Missing code', { status: 400 });
-      }
+      if (!code) return new Response('Missing code', { status: 400 });
 
       const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           client_id: env.GITHUB_CLIENT_ID,
           client_secret: env.GITHUB_CLIENT_SECRET,
@@ -56,15 +49,23 @@ export default {
       if (error || !access_token) {
         const msg = `authorization:github:error:${error ?? 'unknown'}`;
         return new Response(
-          `<script>window.opener?.postMessage(${JSON.stringify(msg)}, '*'); window.close();</script>`,
+          `<script>(function(){
+            function cb(e){ e.source.postMessage(${JSON.stringify(msg)}, e.origin); }
+            window.addEventListener('message', cb, false);
+            window.opener.postMessage('authorizing:github', '*');
+          })()</script>`,
           { headers: { 'Content-Type': 'text/html' } }
         );
       }
 
-      const payload = JSON.stringify({ token: access_token, provider: 'github' });
-      const msg = `authorization:github:success:${payload}`;
+      const token = access_token;
+      const successMsg = `authorization:github:success:${JSON.stringify({ token, provider: 'github' })}`;
       return new Response(
-        `<script>window.opener?.postMessage(${JSON.stringify(msg)}, '*'); window.close();</script>`,
+        `<script>(function(){
+          function cb(e){ e.source.postMessage(${JSON.stringify(successMsg)}, e.origin); }
+          window.addEventListener('message', cb, false);
+          window.opener.postMessage('authorizing:github', '*');
+        })()</script>`,
         { headers: { 'Content-Type': 'text/html' } }
       );
     }
