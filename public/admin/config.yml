@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: davidrourap/davidrourap.github.io  # Change to your GitHub username/repo
+  repo: drou0302/drou0302.github.io
   branch: main
   base_url: https://your-oauth-worker.workers.dev  # Your Cloudflare Worker URL (see oauth-worker/)
 
