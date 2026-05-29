@@ -263,6 +263,17 @@
       "journal": "Molecules",
       "year": 2018,
       "doi": "10.3390/molecules23123273"
+    },
+    {
+      "title": "Sustainable synthesis of L-phenylalanine derivatives in continuous flow by",
+      "role": "first",
+      "authors": "Roura Padrosa, D.; Lehmann, H.; Snajdrova, R.; Paradisi, F.",
+      "journal": "Frontiers in Catalysis",
+      "year": 2023,
+      "doi": "10.3389/fctls.2023.1147205",
+      "pdb_ids": [
+        "AtPAL2"
+      ]
     }
   ],
   "skills": [
