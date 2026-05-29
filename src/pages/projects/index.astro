@@ -5,6 +5,14 @@ import { getCollection } from 'astro:content';
 const allProjects = (await getCollection('projects'))
   .sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0));
 
+const typeColor: Record<string, string> = {
+  research: 'text-[#D2E59E] border-[#6D5959]',
+  startup:  'text-[#9FA0C3] border-[#6D5959]',
+  personal: 'text-[#FE9000] border-[#6D5959]',
+  hobby:     'text-[#FE9000] border-[#6D5959]',
+  education: 'text-[#9FA0C3] border-[#6D5959]',
+};
+
 const statusDot: Record<string, string> = {
   active:    '●',
   completed: '✓',
@@ -39,8 +47,7 @@ const statusColor: Record<string, string> = {
               <div class="flex items-start justify-between gap-6">
                 <div class="flex-1 min-w-0">
                   <div class="flex items-center gap-3 mb-2">
-                    <span class={`font-mono text-[10px] tracking-[0.15em] uppercase px-2 py-0.5 border
-                      ${project.data.type === 'startup' ? 'text-[#9FA0C3] border-[#6D5959]' : 'text-[#D2E59E] border-[#6D5959]'}`}>
+                    <span class={`font-mono text-[10px] tracking-[0.15em] uppercase px-2 py-0.5 border ${typeColor[project.data.type] ?? 'text-[#9FA0C3] border-[#6D5959]'}`}>
                       {project.data.type}
                     </span>
                     <span class={`font-mono text-[10px] ${statusColor[project.data.status]}`}>
