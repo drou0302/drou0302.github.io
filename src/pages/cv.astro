@@ -3,7 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const [entry] = await getCollection('cv');
-const { positions, education, publications, skills } = entry.data;
+const { positions, education, skills } = entry.data;
+const publications = [...entry.data.publications].sort((a, b) => b.year - a.year);
 ---
 <BaseLayout title="CV" description="Curriculum Vitae — David Roura Padrosa">
   <div class="max-w-4xl mx-auto px-8 pt-28 pb-20">

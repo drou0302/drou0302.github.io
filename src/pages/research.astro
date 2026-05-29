@@ -6,7 +6,7 @@ const [aboutEntry] = await getCollection('about');
 const { background, current_work } = aboutEntry.data;
 
 const [cvEntry] = await getCollection('cv');
-const { publications } = cvEntry.data;
+const publications = [...cvEntry.data.publications].sort((a, b) => b.year - a.year);
 
 // Build pdb_id → publications lookup for the client
 type PubMeta = { title: string; journal: string; year: number; doi?: string };
