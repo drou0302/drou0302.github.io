@@ -367,5 +367,15 @@
       "awarded_by": "Hello Tomorrow",
       "year": 2026
     }
+  ],
+  "funding": [
+    {
+      "title": "BRIDGE Proof of Concept",
+      "funder": "BRIDGE (Innosuisse)",
+      "amount": "197000",
+      "start": "2023",
+      "end": "2024",
+      "role": "PI"
+    }
   ]
 }
