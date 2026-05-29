@@ -169,7 +169,8 @@
       "title": "Efficient Amino Donor Recycling in Amination Reactions",
       "journal": "Catalysts",
       "year": 2021,
-      "doi": "10.3390/catal11040520"
+      "doi": "10.3390/catal11040520",
+      "pdb_ids": ["TsRTA", "AlaDH"]
     },
     {
       "authors": "Roura Padrosa, D.; Marchini, V.; Paradisi, F.",
@@ -201,7 +202,8 @@
       "title": "Multi-gram preparation of cinnamoyl tryptamines as skin whitening agents",
       "journal": "Tetrahedron Letters",
       "year": 2021,
-      "doi": "10.1016/J.TETLET.2021.153453"
+      "doi": "10.1016/J.TETLET.2021.153453",
+      "pdb_ids": ["AtPAL2"]
     },
     {
       "authors": "Contente, M.L.; Roura Padrosa, D.; Molinari, F.; Paradisi, F.",
@@ -225,7 +227,8 @@
       "title": "Cell-free biocatalytic syntheses of L-pipecolic acid",
       "journal": "Green Chemistry",
       "year": 2020,
-      "doi": "10.1039/d0gc01817a"
+      "doi": "10.1039/d0gc01817a",
+      "pdb_ids": ["HeP5C", "HeFDH", "AlaDH"]
     },
     {
       "authors": "Roura Padrosa, D.; Alaux, R.; Smith, P.; Dreveny, I.; López-Gallego, F.; Paradisi, F.",
@@ -233,7 +236,8 @@
       "title": "Enhancing PLP-Binding Capacity of Class-III ω-Transaminase",
       "journal": "Frontiers in Bioengineering and Biotechnology",
       "year": 2019,
-      "doi": "10.3389/fbioe.2019.00282"
+      "doi": "10.3389/fbioe.2019.00282",
+      "pdb_ids": ["TsRTA"]
     },
     {
       "authors": "Roura Padrosa, D.; De Vitis, V.; Contente, M.L.; Molinari, F.; Paradisi, F.",

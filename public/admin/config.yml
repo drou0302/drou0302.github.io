@@ -67,6 +67,12 @@ collections:
               - { label: Journal, name: journal, widget: string }
               - { label: Year, name: year, widget: number, value_type: int }
               - { label: DOI, name: doi, widget: string, required: false }
+              - label: Protein structures (PDB IDs)
+                name: pdb_ids
+                widget: list
+                required: false
+                hint: "PDB IDs of structures featured in this paper (e.g. TsRTA). Links the protein viewer on the Research page."
+                field: { label: PDB ID, name: pdb_id, widget: string }
           - label: Skills
             name: skills
             widget: list

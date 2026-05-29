@@ -270,6 +270,22 @@ const { showNav = true } = Astro.props;
     const canvasEl = document.getElementById('ngl-canvas') as HTMLElement;
     canvasEl.addEventListener('mousedown', () => { stage.setSpin(null as any, 0); canvasEl.style.cursor = 'grabbing'; });
     canvasEl.addEventListener('mouseup',   () => { stage.setSpin([0, 1, 0], 0.006); canvasEl.style.cursor = 'grab'; });
+
+    document.addEventListener('switch-protein', async (e: Event) => {
+      const targetId = (e as CustomEvent<string>).detail;
+      const target = proteins.find(p => p.pdb_id === targetId);
+      if (!target || targetId === activeId) return;
+      closeMenu();
+      setActive(target);
+      descEl.style.transition = 'opacity 0.3s ease';
+      descEl.style.opacity = '0';
+      setTimeout(() => {
+        descEl.textContent = target.description;
+        descEl.style.transition = 'opacity 0.4s ease';
+        descEl.style.opacity = target.description ? '1' : '0';
+      }, 300);
+      await loadProtein(targetId);
+    });
   }
 
   document.querySelectorAll<HTMLAnchorElement>('.ann-link').forEach(link => {

@@ -64,6 +64,7 @@ const cv = defineCollection({
       journal: z.string(),
       year: z.number(),
       doi: z.string().optional(),
+      pdb_ids: z.array(z.string()).default([]),
     })).default([]),
     skills: z.array(z.string()).default([]),
   }),

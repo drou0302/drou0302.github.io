@@ -86,7 +86,7 @@ const { publications } = cvEntry.data;
                 <p class="font-display font-semibold text-[#D2E59E] text-[1.1rem] leading-snug mb-2.5">
                   {pub.title}
                 </p>
-                <p class="font-serif text-sm text-[#9FA0C3] leading-relaxed">
+                <p class="font-serif text-sm text-[#9FA0C3] leading-relaxed mb-3">
                   {pub.authors}.{' '}
                   <em class={isHighImpact ? 'text-[#FE9000] font-semibold not-italic' : ''}>{pub.journal}</em>.
                   {pub.doi && (
@@ -94,6 +94,19 @@ const { publications } = cvEntry.data;
                        class="text-[#FE9000] hover:underline ml-2">DOI ↗</a>
                   )}
                 </p>
+                {pub.pdb_ids && pub.pdb_ids.length > 0 && (
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-mono text-[8px] text-[#6D5959] tracking-[0.2em] uppercase mr-1">Structures</span>
+                    {pub.pdb_ids.map(id => (
+                      <button
+                        data-pdb-switch={id}
+                        class="font-mono text-[9px] tracking-[0.12em] uppercase px-2 py-0.5 border border-[#6D5959] text-[#9FA0C3] hover:text-[#FE9000] hover:border-[#FE9000] transition-colors duration-150 cursor-pointer"
+                      >
+                        {id}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           );
@@ -102,5 +115,18 @@ const { publications } = cvEntry.data;
       </div>
     </div>
   )}
+
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-pdb-switch]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.pdbSwitch!;
+      document.getElementById('protein-section')?.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        document.dispatchEvent(new CustomEvent('switch-protein', { detail: id }));
+      }, 400);
+    });
+  });
+</script>
 
 </BaseLayout>
