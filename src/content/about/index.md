@@ -18,4 +18,7 @@ network_nodes:
   - Protein Specialist
   - Start-up founder
   - International experience
+  - Biocatalysis
+  - Science communicator
+  - Business Development
 ---
