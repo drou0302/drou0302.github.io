@@ -8,10 +8,12 @@ media_folder: public/images
 public_folder: /images
 
 collections:
-  - name: pages
-    label: Pages
+
+  # ── About ──────────────────────────────────────────────────────────────────
+  - name: about
+    label: About
     files:
-      - label: About
+      - label: About page
         name: about
         file: src/content/about/index.md
         fields:
@@ -25,6 +27,11 @@ collections:
             widget: list
             hint: "Labels shown on the homepage particle network when hovered."
             field: { label: Node label, name: node, widget: string }
+
+  # ── CV ─────────────────────────────────────────────────────────────────────
+  - name: cv
+    label: CV
+    files:
       - label: CV
         name: cv
         file: src/content/cv/index.json
@@ -77,11 +84,25 @@ collections:
                   name: pdb_id
                   widget: select
                   options: [AlaDH, AtPAL2, BmGDH, BsADH, CgKR, GcIRED, HRP, HeFDH, HeP5C, HeWT, LbTDC, Papain, TsRTA]
+          - label: Presentations
+            name: presentations
+            widget: list
+            required: false
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Venue / Conference, name: venue, widget: string }
+              - { label: Location, name: location, widget: string, required: false }
+              - { label: Year, name: year, widget: number, value_type: int }
+              - label: Type
+                name: type
+                widget: select
+                options: [talk, poster, invited]
           - label: Skills
             name: skills
             widget: list
             field: { label: Skill, name: skill, widget: string }
 
+  # ── Blog Posts ─────────────────────────────────────────────────────────────
   - name: blog
     label: Blog Posts
     folder: src/content/blog
@@ -100,6 +121,7 @@ collections:
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Body, name: body, widget: markdown }
 
+  # ── Projects ───────────────────────────────────────────────────────────────
   - name: projects
     label: Projects
     folder: src/content/projects

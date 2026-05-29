@@ -66,6 +66,13 @@ const cv = defineCollection({
       doi: z.string().optional(),
       pdb_ids: z.array(z.string()).default([]),
     })).default([]),
+    presentations: z.array(z.object({
+      title: z.string(),
+      venue: z.string(),
+      location: z.string().optional(),
+      year: z.number(),
+      type: z.enum(['talk', 'poster', 'invited']),
+    })).default([]),
     skills: z.array(z.string()).default([]),
   }),
 });

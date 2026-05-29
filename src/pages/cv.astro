@@ -4,7 +4,9 @@ import { getCollection } from 'astro:content';
 
 const [entry] = await getCollection('cv');
 const { positions, education, skills } = entry.data;
+const presentations = [...(entry.data.presentations ?? [])].sort((a, b) => b.year - a.year);
 const publications = [...entry.data.publications].sort((a, b) => b.year - a.year);
+const COLLAPSED_COUNT = 5;
 ---
 <BaseLayout title="CV" description="Curriculum Vitae — David Roura Padrosa">
   <div class="max-w-4xl mx-auto px-8 pt-28 pb-20">
@@ -14,10 +16,12 @@ const publications = [...entry.data.publications].sort((a, b) => b.year - a.year
         <span class="font-mono text-[10px] text-[#9FA0C3] tracking-[0.25em] uppercase">Curriculum Vitae</span>
         <div class="flex-1 h-px bg-[#6D5959]"></div>
       </div>
-      <a href="/cv.pdf" download
-         class="ml-6 font-mono text-[10px] tracking-[0.15em] uppercase text-[#D2E59E] border border-[#6D5959] px-4 py-2 hover:bg-[#D2E59E] hover:text-[#000500] transition-all shrink-0">
+      <button
+        id="print-cv-btn"
+        class="ml-6 font-mono text-[10px] tracking-[0.15em] uppercase text-[#D2E59E] border border-[#6D5959] px-4 py-2 hover:bg-[#D2E59E] hover:text-[#000500] transition-all shrink-0 cursor-pointer"
+      >
         ↓ PDF
-      </a>
+      </button>
     </div>
 
     <h1 class="font-display text-[clamp(2.8rem,6vw,5rem)] font-semibold leading-[0.9] tracking-[-0.02em] text-[#D2E59E] mb-16">
@@ -81,7 +85,7 @@ const publications = [...entry.data.publications].sort((a, b) => b.year - a.year
             </a>
           </div>
           <div class="border-t border-[#6D5959] pt-5 space-y-3">
-            {publications.map(pub => {
+            {publications.map((pub, i) => {
               const isHighImpact = ['Nature Chemistry', 'Nature Catalysis'].includes(pub.journal);
               const badge = {
                 'first':           { cls: 'text-[#D2E59E] border-[#6D5959]', label: 'First author' },
@@ -90,8 +94,9 @@ const publications = [...entry.data.publications].sort((a, b) => b.year - a.year
                 'co-corresponding':{ cls: 'text-[#FE9000] border-[#6D5959]', label: 'Co-corresp.' },
                 'contributing':    { cls: 'text-[#9FA0C3] border-[#6D5959]', label: 'Co-author' },
               }[pub.role ?? 'contributing'] ?? { cls: 'text-[#9FA0C3] border-[#6D5959]', label: 'Co-author' };
+              const hidden = i >= COLLAPSED_COUNT;
               return (
-                <div class="grid gap-3 items-start" style="grid-template-columns: 7rem 1fr;">
+                <div class={`grid gap-3 items-start pub-entry${hidden ? ' pub-hidden' : ''}`} style="grid-template-columns: 7rem 1fr;">
                   <span class={`font-mono text-[9px] tracking-[0.06em] uppercase px-1.5 py-0.5 border text-center leading-tight ${badge.cls}`}>
                     {badge.label}
                   </span>
@@ -104,6 +109,47 @@ const publications = [...entry.data.publications].sort((a, b) => b.year - a.year
                          class="text-[#FE9000] hover:underline ml-1">DOI ↗</a>
                     )}
                   </p>
+                </div>
+              );
+            })}
+          </div>
+          {publications.length > COLLAPSED_COUNT && (
+            <button
+              id="pubs-toggle"
+              class="mt-5 font-mono text-[10px] tracking-[0.15em] uppercase text-[#9FA0C3] border border-[#6D5959] px-4 py-2 hover:text-[#D2E59E] hover:border-[#9FA0C3] transition-all cursor-pointer"
+              data-total={publications.length}
+              data-collapsed={COLLAPSED_COUNT}
+            >
+              Show all {publications.length} publications ↓
+            </button>
+          )}
+        </section>
+      )}
+
+      {presentations.length > 0 && (
+        <section>
+          <span class="font-mono text-[10px] text-[#9FA0C3] tracking-[0.25em] uppercase block mb-5">
+            Presentations <span class="text-[#9FA0C3]">({presentations.length})</span>
+          </span>
+          <div class="border-t border-[#6D5959] pt-5 space-y-4">
+            {presentations.map(pres => {
+              const typeLabel = { talk: 'Talk', poster: 'Poster', invited: 'Invited' }[pres.type] ?? pres.type;
+              const typeCls = pres.type === 'invited'
+                ? 'text-[#FE9000] border-[#6D5959]'
+                : pres.type === 'talk'
+                  ? 'text-[#D2E59E] border-[#6D5959]'
+                  : 'text-[#9FA0C3] border-[#6D5959]';
+              return (
+                <div class="grid gap-3 items-start" style="grid-template-columns: 7rem 1fr;">
+                  <span class={`font-mono text-[9px] tracking-[0.06em] uppercase px-1.5 py-0.5 border text-center leading-tight ${typeCls}`}>
+                    {typeLabel}
+                  </span>
+                  <div>
+                    <p class="font-serif text-sm text-[#D2E59E] leading-snug">{pres.title}</p>
+                    <p class="font-serif text-[11px] text-[#9FA0C3] mt-0.5">
+                      {pres.venue}{pres.location ? ` · ${pres.location}` : ''} · {pres.year}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -127,3 +173,40 @@ const publications = [...entry.data.publications].sort((a, b) => b.year - a.year
     </div>
   </div>
 </BaseLayout>
+
+<style is:global>
+  @media print {
+    nav, footer, #print-cv-btn, #pubs-toggle { display: none !important; }
+    body { background: #fff !important; color: #000 !important; }
+    .pub-hidden { display: grid !important; }
+    a { color: inherit !important; text-decoration: none !important; }
+  }
+</style>
+
+<script>
+  // Print button
+  document.getElementById('print-cv-btn')?.addEventListener('click', () => window.print());
+
+  // Publications expand/collapse
+  const toggle = document.getElementById('pubs-toggle') as HTMLButtonElement | null;
+  if (toggle) {
+    const total = Number(toggle.dataset.total);
+    const collapsed = Number(toggle.dataset.collapsed);
+    let expanded = false;
+
+    toggle.addEventListener('click', () => {
+      expanded = !expanded;
+      document.querySelectorAll('.pub-hidden').forEach(el => {
+        (el as HTMLElement).style.display = expanded ? 'grid' : 'none';
+      });
+      toggle.textContent = expanded
+        ? `Show fewer ↑`
+        : `Show all ${total} publications ↓`;
+    });
+
+    // Initialise hidden ones
+    document.querySelectorAll('.pub-hidden').forEach(el => {
+      (el as HTMLElement).style.display = 'none';
+    });
+  }
+</script>

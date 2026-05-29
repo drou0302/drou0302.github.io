@@ -68,7 +68,14 @@
       "doi": "10.1021/acs.biomac.5c01010"
     },
     {
-      "authors": "Fernández Regueiro, C.L.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Meersseman Arango, H.; Bachus, N.; Nguyen, X.D.L.; Bredun, B.; Luis, P.; Leyssens, T.; Roura Padrosa, D.; Paradisi, F.; Debecker, D.P.",
+      "title": "Crystallization-Assisted Asymmetric Synthesis of Enantiopure Amines Using Membrane-Immobilized Transaminase",
+      "journal": "Chem & Bio Engineering",
+      "year": 2025,
+      "doi": "10.1021/cbe.4c00186"
+    },
+    {
+      "authors": "Fern\u00e1ndez Regueiro, C.L.; Roura Padrosa, D.; Paradisi, F.",
       "role": "co-corresponding",
       "title": "Biocatalysis in packed-bed reactors: immobilization as an enabling technology",
       "journal": "Comptes Rendus. Chimie",
@@ -76,7 +83,14 @@
       "doi": "10.5802/crchim.386"
     },
     {
-      "authors": "Pillet, L.; Fernández Regueiro, C.L.; Busch, M.R.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Ben\u00edtez-Mateos, A.I.; Lim, D.; Roura Padrosa, D.; Marchini, V.; Wu, H.; Buono, F.; Paradisi, F.",
+      "title": "Biocatalytic Reduction of Heterocyclic Imines in Continuous Flow with Immobilized Enzymes",
+      "journal": "ACS Sustainable Chemistry & Engineering",
+      "year": 2025,
+      "doi": "10.1021/acssuschemeng.4c09676"
+    },
+    {
+      "authors": "Pillet, L.; Fern\u00e1ndez Regueiro, C.L.; Busch, M.R.; Roura Padrosa, D.; Paradisi, F.",
       "role": "contributing",
       "title": "A novel ene-reductase from Halomonas elongata for flow biocatalytic synthesis",
       "journal": "RSC Advances",
@@ -85,7 +99,7 @@
       "pdb_ids": []
     },
     {
-      "authors": "López, I.L.; Sánchez-Costa, M.; Orrego, A.H.; Zeballos, N.; Roura Padrosa, D.; López-Gallego, F.",
+      "authors": "L\u00f3pez, I.L.; S\u00e1nchez-Costa, M.; Orrego, A.H.; Zeballos, N.; Roura Padrosa, D.; L\u00f3pez-Gallego, F.",
       "role": "contributing",
       "title": "Microtiter Plate Immobilization Screening for Prototyping Heterogeneous Enzyme Cascades",
       "journal": "Angewandte Chemie",
@@ -93,7 +107,7 @@
       "doi": "10.1002/ange.202407411"
     },
     {
-      "authors": "Díaz-Kruik, P.; Roura Padrosa, D.; Hegarty, E.; Lehmann, H.; Snajdrova, R.; Paradisi, F.",
+      "authors": "D\u00edaz-Kruik, P.; Roura Padrosa, D.; Hegarty, E.; Lehmann, H.; Snajdrova, R.; Paradisi, F.",
       "role": "contributing",
       "title": "Solvent Switching in Continuous Multistep Chemoenzymatic Synthesis",
       "journal": "Organic Process Research & Development",
@@ -125,6 +139,21 @@
       "doi": "10.1039/d4su00293h"
     },
     {
+      "authors": "Contaldo, U.; Padrosa, D.R.; Jamet, H\u00e9l\u00e8n.; Albrecht, M.; Paradisi, F.; Le Goff, A.",
+      "title": "Optimising Electrical Interfacing between the Trimeric Copper Nitrite Reductase and Carbon Nanotubes",
+      "journal": "Chemistry \u2013 A European Journal",
+      "year": 2023,
+      "doi": "10.1002/chem.202301351"
+    },
+    {
+      "authors": "Roura Padrosa, D.; Paradisi, F.",
+      "role": "first",
+      "title": "Bioinformatic Analysis of Immobilized Enzymes: Towards a Better Understanding",
+      "journal": "ChemBioChem",
+      "year": 2023,
+      "doi": "10.1002/cbic.202200723"
+    },
+    {
       "title": "Sustainable synthesis of L-phenylalanine derivatives in continuous flow by",
       "role": "first",
       "authors": "Roura Padrosa, D.; Lehmann, H.; Snajdrova, R.; Paradisi, F.",
@@ -136,15 +165,14 @@
       ]
     },
     {
-      "authors": "Roura Padrosa, D.; Paradisi, F.",
-      "role": "first",
-      "title": "Bioinformatic Analysis of Immobilized Enzymes: Towards a Better Understanding",
-      "journal": "ChemBioChem",
-      "year": 2023,
-      "doi": "10.1002/cbic.202200723"
+      "authors": "Padrosa, D.R.; Ben\u00edtez-Mateos, A.I.; Paradisi, F.",
+      "title": "Back to the future: taking enzymes to the next level of sustainability",
+      "journal": "The Biochemist",
+      "year": 2022,
+      "doi": "10.1042/bio_2022_109"
     },
     {
-      "authors": "Benítez-Mateos, A.I.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Ben\u00edtez-Mateos, A.I.; Roura Padrosa, D.; Paradisi, F.",
       "role": "co-first",
       "title": "Multistep enzyme cascades as a route towards green and sustainable pharmaceutical syntheses",
       "journal": "Nature Chemistry",
@@ -160,7 +188,7 @@
       "doi": "10.3389/frym.2022.684678"
     },
     {
-      "authors": "Benítez-Mateos, A.I.; Klein, C.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Ben\u00edtez-Mateos, A.I.; Klein, C.; Roura Padrosa, D.; Paradisi, F.",
       "role": "contributing",
       "title": "A novel thymidine phosphorylase to synthesize (halogenated) anticancer and antiviral nucleoside drugs",
       "journal": "Catalysis Science & Technology",
@@ -174,6 +202,13 @@
       "journal": "Green Chemistry",
       "year": 2022,
       "doi": "10.1039/d2gc02767d"
+    },
+    {
+      "authors": "Marchini, V.; Ben\u00edtez-Mateos, A.I.; Roura Padrosa, D.; Paradisi, F.",
+      "title": "Fusion of Glutamate Dehydrogenase and Formate Dehydrogenase Yields a Bifunctional Efficient Biocatalyst for the Continuous Removal of Ammonia",
+      "journal": "Frontiers in Catalysis",
+      "year": 2021,
+      "doi": "10.3389/fctls.2021.790461"
     },
     {
       "authors": "Roura Padrosa, D.; Nisar, Z.; Paradisi, F.",
@@ -195,7 +230,7 @@
       "doi": "10.1093/bioinformatics/btab030"
     },
     {
-      "authors": "Benítez-Mateos, A.I.; Contente, M.L.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Ben\u00edtez-Mateos, A.I.; Contente, M.L.; Roura Padrosa, D.; Paradisi, F.",
       "role": "co-first",
       "title": "Flow biocatalysis 101: design, development and applications",
       "journal": "Reaction Chemistry & Engineering",
@@ -238,7 +273,14 @@
       "doi": "10.1002/cctc.202001112"
     },
     {
-      "authors": "Roura Padrosa, D.; Benítez-Mateos, A.I.; Calvey, L.; Paradisi, F.",
+      "authors": "Roura Padrosa, D.; Marchini, V.; Paradisi, F.",
+      "title": "CapiPy: Python Based GUI-Application to Assist in Protein Immobilization",
+      "journal": "",
+      "year": 2020,
+      "doi": "10.26434/chemrxiv.13110389.v1"
+    },
+    {
+      "authors": "Roura Padrosa, D.; Ben\u00edtez-Mateos, A.I.; Calvey, L.; Paradisi, F.",
       "role": "first",
       "title": "Cell-free biocatalytic syntheses of L-pipecolic acid",
       "journal": "Green Chemistry",
@@ -249,9 +291,9 @@
       ]
     },
     {
-      "authors": "Roura Padrosa, D.; Alaux, R.; Smith, P.; Dreveny, I.; López-Gallego, F.; Paradisi, F.",
+      "authors": "Roura Padrosa, D.; Alaux, R.; Smith, P.; Dreveny, I.; L\u00f3pez-Gallego, F.; Paradisi, F.",
       "role": "first",
-      "title": "Enhancing PLP-Binding Capacity of Class-III ω-Transaminase",
+      "title": "Enhancing PLP-Binding Capacity of Class-III \u03c9-Transaminase",
       "journal": "Frontiers in Bioengineering and Biotechnology",
       "year": 2019,
       "doi": "10.3389/fbioe.2019.00282",
@@ -268,12 +310,19 @@
       "doi": "10.3390/catal9030232"
     },
     {
-      "authors": "Roura Padrosa, D.; Castro, J.; Romero-Casañas, A.; Ribó, M.; Vilanova, M.; Benito, A.",
+      "authors": "Roura Padrosa, D.; Castro, J.; Romero-Casa\u00f1as, A.; Rib\u00f3, M.; Vilanova, M.; Benito, A.",
       "role": "first",
       "title": "Construction of Highly Stable Cytotoxic Nuclear-Directed Ribonucleases",
       "journal": "Molecules",
       "year": 2018,
       "doi": "10.3390/molecules23123273"
+    },
+    {
+      "authors": "Planchestainer, M.; Roura Padrosa, D.; Contente, M.; Paradisi, F.",
+      "title": "Genetically Fused T4L Acts as a Shield in Covalent Enzyme Immobilisation Enhancing the Rescued Activity",
+      "journal": "Catalysts",
+      "year": 2018,
+      "doi": "10.3390/catal8010040"
     }
   ],
   "skills": [
@@ -282,5 +331,6 @@
     "Flow chemistry",
     "AI/ML for protein engineering",
     "Startup building"
-  ]
+  ],
+  "presentations": []
 }

@@ -8,5 +8,27 @@
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      (function () {
+        var btn = document.createElement('a');
+        btn.href = 'https://github.com/drou0302/drou0302.github.io/actions/workflows/sync-orcid.yml';
+        btn.target = '_blank';
+        btn.rel = 'noopener noreferrer';
+        btn.textContent = '↻ Sync from ORCID';
+        btn.title = 'Opens the GitHub Action that pulls new publications from your ORCID profile';
+        btn.style.cssText = [
+          'position:fixed', 'bottom:20px', 'right:20px', 'z-index:99999',
+          'background:#FE9000', 'color:#000500',
+          'font-family:ui-monospace,Menlo,monospace', 'font-size:11px',
+          'letter-spacing:0.12em', 'text-transform:uppercase',
+          'padding:8px 16px', 'text-decoration:none',
+          'box-shadow:0 2px 8px rgba(0,0,0,0.4)',
+          'transition:opacity 0.2s',
+        ].join(';');
+        btn.addEventListener('mouseover', function () { btn.style.opacity = '0.85'; });
+        btn.addEventListener('mouseout',  function () { btn.style.opacity = '1'; });
+        document.body.appendChild(btn);
+      })();
+    </script>
   </body>
 </html>

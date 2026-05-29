@@ -1,4 +1,4 @@
 ---
-title: Wild-Type Enzyme
+title: S-Transaminase
 pdb_id: HeWT
 ---

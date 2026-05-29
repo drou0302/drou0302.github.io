@@ -1,4 +1,4 @@
 ---
-title: Threonine Decarboxylase
+title: Tyrosine Decarboxylase
 pdb_id: LbTDC
 ---
