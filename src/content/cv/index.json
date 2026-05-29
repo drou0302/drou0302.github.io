@@ -69,7 +69,7 @@
     },
     {
       "authors": "Fernández Regueiro, C.L.; Roura Padrosa, D.; Paradisi, F.",
-      "role": "contributing",
+      "role": "co-corresponding",
       "title": "Biocatalysis in packed-bed reactors: immobilization as an enabling technology",
       "journal": "Comptes Rendus. Chimie",
       "year": 2025,
@@ -108,8 +108,8 @@
       "doi": "10.1021/acs.oprd.3c00347"
     },
     {
-      "authors": "Roura Padrosa, D. et al.",
-      "role": "contributing",
+      "authors": "Roura Padrosa, D.; Benitez-Mateos, Ana I.; Paradisi, F.",
+      "role": "co-first",
       "title": "Flow Biocatalysis for Chiral Molecules Synthesis",
       "journal": "Comprehensive Chirality",
       "year": 2024,
@@ -133,7 +133,7 @@
     },
     {
       "authors": "Benítez-Mateos, A.I.; Roura Padrosa, D.; Paradisi, F.",
-      "role": "contributing",
+      "role": "co-first",
       "title": "Multistep enzyme cascades as a route towards green and sustainable pharmaceutical syntheses",
       "journal": "Nature Chemistry",
       "year": 2022,
@@ -157,7 +157,7 @@
     },
     {
       "authors": "Gianolio, S.; Roura Padrosa, D.; Paradisi, F.",
-      "role": "contributing",
+      "role": "co-corresponding",
       "title": "Combined chemoenzymatic strategy for sustainable continuous synthesis of hordenine",
       "journal": "Green Chemistry",
       "year": 2022,
@@ -173,7 +173,7 @@
     },
     {
       "authors": "Roura Padrosa, D.; Marchini, V.; Paradisi, F.",
-      "role": "first",
+      "role": "corresponding",
       "title": "CapiPy: python-based GUI-application to assist in protein immobilization",
       "journal": "Bioinformatics",
       "year": 2021,
@@ -181,7 +181,7 @@
     },
     {
       "authors": "Benítez-Mateos, A.I.; Contente, M.L.; Roura Padrosa, D.; Paradisi, F.",
-      "role": "contributing",
+      "role": "co-first",
       "title": "Flow biocatalysis 101: design, development and applications",
       "journal": "Reaction Chemistry & Engineering",
       "year": 2021,
