@@ -73,6 +73,20 @@ const cv = defineCollection({
       year: z.number(),
       type: z.enum(['talk', 'poster', 'invited']),
     })).default([]),
+    prizes: z.array(z.object({
+      title: z.string(),
+      awarded_by: z.string(),
+      year: z.number(),
+      description: z.string().optional(),
+    })).default([]),
+    funding: z.array(z.object({
+      title: z.string(),
+      funder: z.string(),
+      amount: z.string().optional(),
+      start: z.string(),
+      end: z.string(),
+      role: z.enum(['PI', 'Co-PI', 'Collaborator']).optional(),
+    })).default([]),
     skills: z.array(z.string()).default([]),
   }),
 });

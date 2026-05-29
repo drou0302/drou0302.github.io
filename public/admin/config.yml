@@ -97,6 +97,30 @@ collections:
                 name: type
                 widget: select
                 options: [talk, poster, invited]
+          - label: Prizes & Awards
+            name: prizes
+            widget: list
+            required: false
+            fields:
+              - { label: Prize / Award title, name: title, widget: string }
+              - { label: Awarded by, name: awarded_by, widget: string }
+              - { label: Year, name: year, widget: number, value_type: int }
+              - { label: Description, name: description, widget: text, required: false }
+          - label: Grants & Funding
+            name: funding
+            widget: list
+            required: false
+            fields:
+              - { label: Grant / Project title, name: title, widget: string }
+              - { label: Funder, name: funder, widget: string }
+              - { label: Amount, name: amount, widget: string, required: false, hint: "e.g. CHF 150,000" }
+              - { label: Start year, name: start, widget: string }
+              - { label: End year, name: end, widget: string }
+              - label: Role
+                name: role
+                widget: select
+                required: false
+                options: [PI, Co-PI, Collaborator]
           - label: Skills
             name: skills
             widget: list

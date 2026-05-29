@@ -5,7 +5,9 @@ import { getCollection } from 'astro:content';
 const [entry] = await getCollection('cv');
 const { positions, education, skills } = entry.data;
 const presentations = [...(entry.data.presentations ?? [])].sort((a, b) => b.year - a.year);
-const publications = [...entry.data.publications].sort((a, b) => b.year - a.year);
+const prizes        = [...(entry.data.prizes   ?? [])].sort((a, b) => b.year - a.year);
+const funding       = [...(entry.data.funding  ?? [])].sort((a, b) => Number(b.start) - Number(a.start));
+const publications  = [...entry.data.publications].sort((a, b) => b.year - a.year);
 const COLLAPSED_COUNT = 5;
 ---
 <BaseLayout title="CV" description="Curriculum Vitae — David Roura Padrosa">
@@ -153,6 +155,53 @@ const COLLAPSED_COUNT = 5;
                 </div>
               );
             })}
+          </div>
+        </section>
+      )}
+
+      {prizes.length > 0 && (
+        <section>
+          <span class="font-mono text-[10px] text-[#9FA0C3] tracking-[0.25em] uppercase block mb-5">
+            Prizes &amp; Awards <span class="text-[#9FA0C3]">({prizes.length})</span>
+          </span>
+          <div class="border-t border-[#6D5959] pt-5 space-y-5">
+            {prizes.map(prize => (
+              <div class="flex justify-between items-start gap-8">
+                <div>
+                  <p class="font-serif font-semibold text-[#D2E59E]">{prize.title}</p>
+                  <p class="font-serif text-sm text-[#9FA0C3]">{prize.awarded_by}</p>
+                  {prize.description && (
+                    <p class="font-serif text-sm text-[#9FA0C3] mt-1 max-w-lg leading-relaxed">{prize.description}</p>
+                  )}
+                </div>
+                <span class="font-mono text-[11px] text-[#9FA0C3] shrink-0">{prize.year}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {funding.length > 0 && (
+        <section>
+          <span class="font-mono text-[10px] text-[#9FA0C3] tracking-[0.25em] uppercase block mb-5">
+            Grants &amp; Funding <span class="text-[#9FA0C3]">({funding.length})</span>
+          </span>
+          <div class="border-t border-[#6D5959] pt-5 space-y-5">
+            {funding.map(grant => (
+              <div class="flex justify-between items-start gap-8">
+                <div>
+                  <p class="font-serif font-semibold text-[#D2E59E]">{grant.title}</p>
+                  <p class="font-serif text-sm text-[#9FA0C3]">
+                    {grant.funder}
+                    {grant.role && <span class="ml-2 font-mono text-[9px] tracking-[0.06em] uppercase px-1.5 py-0.5 border border-[#6D5959] text-[#9FA0C3]">{grant.role}</span>}
+                  </p>
+                  {grant.amount && (
+                    <p class="font-mono text-[11px] text-[#FE9000] mt-1">{grant.amount}</p>
+                  )}
+                </div>
+                <span class="font-mono text-[11px] text-[#9FA0C3] shrink-0">{grant.start} – {grant.end}</span>
+              </div>
+            ))}
           </div>
         </section>
       )}
