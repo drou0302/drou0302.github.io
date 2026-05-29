@@ -120,7 +120,7 @@ collections:
                 name: role
                 widget: select
                 required: false
-                options: [PI, Co-PI, Collaborator]
+                options: [Main applicant, Co-applicant, Participant]
           - label: Skills
             name: skills
             widget: list

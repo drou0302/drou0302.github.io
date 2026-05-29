@@ -85,7 +85,7 @@ const cv = defineCollection({
       amount: z.string().optional(),
       start: z.string(),
       end: z.string(),
-      role: z.enum(['PI', 'Co-PI', 'Collaborator']).optional(),
+      role: z.enum(['Main applicant', 'Co-applicant', 'Participant']).optional(),
     })).default([]),
     skills: z.array(z.string()).default([]),
   }),
