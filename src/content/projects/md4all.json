@@ -1,0 +1,8 @@
+{
+  "title": "MD4all",
+  "description": "MD4all is an open-source, user-friendly Python application that provides a PySimpleGUI-based graphical interface for OpenMM simulations.\n\nMolecular Dynamics (MD) simulations are notoriously complex to set up, usually requiring extensive command-line workflows, script writing, and deep knowledge of force fields just to get a protein simulation running. MD4all lowers this barrier to entry, making MD simulations accessible to wet-lab biochemists, students, and researchers who might not be computational experts.",
+  "type": "research",
+  "status": "completed",
+  "link": "https://github.com/drou0302/MD4all",
+  "year": 2023
+}
