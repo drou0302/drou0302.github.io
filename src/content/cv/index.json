@@ -81,7 +81,8 @@
       "title": "A novel ene-reductase from Halomonas elongata for flow biocatalytic synthesis",
       "journal": "RSC Advances",
       "year": 2025,
-      "doi": "10.1039/D5RA06869J"
+      "doi": "10.1039/D5RA06869J",
+      "pdb_ids": []
     },
     {
       "authors": "López, I.L.; Sánchez-Costa, M.; Orrego, A.H.; Zeballos, N.; Roura Padrosa, D.; López-Gallego, F.",
@@ -170,7 +171,9 @@
       "journal": "Catalysts",
       "year": 2021,
       "doi": "10.3390/catal11040520",
-      "pdb_ids": ["TsRTA", "AlaDH"]
+      "pdb_ids": [
+        "AlaDH"
+      ]
     },
     {
       "authors": "Roura Padrosa, D.; Marchini, V.; Paradisi, F.",
@@ -203,7 +206,9 @@
       "journal": "Tetrahedron Letters",
       "year": 2021,
       "doi": "10.1016/J.TETLET.2021.153453",
-      "pdb_ids": ["AtPAL2"]
+      "pdb_ids": [
+        "AtPAL2"
+      ]
     },
     {
       "authors": "Contente, M.L.; Roura Padrosa, D.; Molinari, F.; Paradisi, F.",
@@ -228,7 +233,9 @@
       "journal": "Green Chemistry",
       "year": 2020,
       "doi": "10.1039/d0gc01817a",
-      "pdb_ids": ["HeP5C", "HeFDH", "AlaDH"]
+      "pdb_ids": [
+        "HeP5C"
+      ]
     },
     {
       "authors": "Roura Padrosa, D.; Alaux, R.; Smith, P.; Dreveny, I.; López-Gallego, F.; Paradisi, F.",
@@ -237,7 +244,9 @@
       "journal": "Frontiers in Bioengineering and Biotechnology",
       "year": 2019,
       "doi": "10.3389/fbioe.2019.00282",
-      "pdb_ids": ["TsRTA"]
+      "pdb_ids": [
+        "HeWT"
+      ]
     },
     {
       "authors": "Roura Padrosa, D.; De Vitis, V.; Contente, M.L.; Molinari, F.; Paradisi, F.",
