@@ -15,12 +15,7 @@ current_work: At inseit, we're building an AI-powered platform that predicts and
 location: Munich, Germany
 affiliation: inSEIT AG
 network_nodes:
-  - Biochemist
-  - Biocatalysis
-  - Enzyme Engineering
-  - inseit
-  - Founder
-  - Nature Chemistry
-  - Transaminases
-  - Munich
+  - Protein Specialist
+  - Start-up founder
+  - International experience
 ---
