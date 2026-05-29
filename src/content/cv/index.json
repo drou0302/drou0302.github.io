@@ -355,5 +355,17 @@
       "year": 2024,
       "type": "talk"
     }
+  ],
+  "prizes": [
+    {
+      "title": "Venture Leader Biotech",
+      "awarded_by": "Venture Kick",
+      "year": 2024
+    },
+    {
+      "title": "Deep Tech Atelier Hello Tomorrow Prize",
+      "awarded_by": "Hello Tomorrow",
+      "year": 2026
+    }
   ]
 }
