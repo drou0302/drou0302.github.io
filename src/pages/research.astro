@@ -23,7 +23,7 @@ publications.forEach(pub => {
 
   <!-- ── Split-screen protein hero ──────────────────────────── -->
   <section id="protein-section" class="relative h-screen bg-[#000500] overflow-hidden">
-    <div class="h-full grid grid-cols-1 lg:grid-cols-[52%_48%]">
+    <div class="h-full grid grid-cols-1 md:grid-cols-[52%_48%]">
 
       <!-- Left: NGL viewer -->
       <div class="relative flex flex-col items-center justify-center">
@@ -33,7 +33,7 @@ publications.forEach(pub => {
           <span class="font-mono text-[9px] text-[#9FA0C3] tracking-[0.3em] uppercase">3D Structure</span>
         </div>
 
-        <div id="ngl-canvas" style="width:360px;height:360px;max-width:85vw;cursor:grab;">
+        <div id="ngl-canvas" style="width:min(360px,44vw);height:min(360px,44vw);cursor:grab;">
           <div id="protein-loading" class="w-full h-full flex items-center justify-center">
             <span class="font-mono text-[10px] text-[#6D5959] tracking-[0.2em] uppercase animate-pulse">Loading…</span>
           </div>
@@ -65,7 +65,7 @@ publications.forEach(pub => {
       <!-- Right: Info panel -->
       <div
         id="info-panel"
-        class="hidden lg:flex flex-col justify-center px-14 pt-24 pb-12 border-l border-[#6D5959]"
+        class="hidden md:flex flex-col justify-center px-8 lg:px-14 pt-20 lg:pt-24 pb-12 border-l border-[#6D5959]"
         style="opacity:0;"
       >
         <span id="panel-pdb-id" class="font-mono text-[9px] text-[#6D5959] tracking-[0.3em] uppercase mb-5 block"></span>
@@ -74,7 +74,7 @@ publications.forEach(pub => {
             class="font-display font-semibold text-[#D2E59E] leading-[0.88] tracking-[-0.025em] mb-5"
             style="font-size:clamp(1.8rem,3vw,2.8rem);"></h2>
 
-        <p id="panel-desc" class="font-serif text-sm text-[#9FA0C3] leading-relaxed mb-8 max-w-xs"></p>
+        <p id="panel-desc" class="font-serif text-sm text-[#9FA0C3] leading-relaxed mb-8"></p>
 
         <!-- Linked publications -->
         <div id="panel-pub">
@@ -85,10 +85,10 @@ publications.forEach(pub => {
       </div>
     </div>
 
-    <div class="absolute bottom-6 right-8 hidden lg:block">
+    <div class="absolute bottom-6 right-8 hidden md:block">
       <span class="font-mono text-[9px] text-[#6D5959] tracking-[0.3em] uppercase">Scroll ↓</span>
     </div>
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 lg:hidden">
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 md:hidden">
       <span class="font-mono text-[9px] text-[#6D5959] tracking-[0.3em] uppercase">Scroll ↓</span>
     </div>
   </section>
