@@ -57,7 +57,7 @@ const cv = defineCollection({
     })),
     publications: z.array(z.object({
       authors: z.string(),
-      role: z.enum(['first', 'corresponding', 'contributing']).optional(),
+      role: z.enum(['first', 'co-first', 'corresponding', 'co-corresponding', 'contributing']).optional(),
       title: z.string(),
       journal: z.string(),
       year: z.number(),

@@ -56,7 +56,7 @@ collections:
               - label: Role
                 name: role
                 widget: select
-                options: [first, corresponding, contributing]
+                options: [first, co-first, corresponding, co-corresponding, contributing]
                 required: false
               - { label: Title, name: title, widget: string }
               - { label: Journal, name: journal, widget: string }

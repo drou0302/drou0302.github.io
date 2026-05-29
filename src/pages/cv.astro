@@ -79,17 +79,20 @@ const { positions, education, publications, skills } = entry.data;
               ORCID ↗
             </a>
           </div>
-          <div class="border-t border-[#ddd8ce] pt-5 space-y-4">
+          <div class="border-t border-[#ddd8ce] pt-5 space-y-3">
             {publications.map(pub => {
               const isHighImpact = ['Nature Chemistry', 'Nature Catalysis'].includes(pub.journal);
-              const badgeStyle =
-                pub.role === 'first'        ? { cls: 'text-[#2355b0] bg-[#eef2fc] border-[#c5d2f0]', label: 'First author' } :
-                pub.role === 'corresponding' ? { cls: 'text-[#7a3a00] bg-[#fdf0e0] border-[#f0d0a0]', label: 'Corresponding' } :
-                                              { cls: 'text-[#aaa59f] bg-[#eeeae0] border-[#ddd8ce]', label: 'Co-author' };
+              const badge = {
+                'first':           { cls: 'text-[#2355b0] bg-[#eef2fc] border-[#c5d2f0]', label: 'First author' },
+                'co-first':        { cls: 'text-[#2355b0] bg-[#eef2fc] border-[#c5d2f0]', label: 'Co-first' },
+                'corresponding':   { cls: 'text-[#7a3a00] bg-[#fdf0e0] border-[#f0d0a0]', label: 'Corresponding' },
+                'co-corresponding':{ cls: 'text-[#7a3a00] bg-[#fdf0e0] border-[#f0d0a0]', label: 'Co-corresp.' },
+                'contributing':    { cls: 'text-[#aaa59f] bg-[#eeeae0] border-[#ddd8ce]', label: 'Co-author' },
+              }[pub.role ?? 'contributing'] ?? { cls: 'text-[#aaa59f] bg-[#eeeae0] border-[#ddd8ce]', label: 'Co-author' };
               return (
-                <div class="flex gap-3 items-start">
-                  <span class={`font-mono text-[9px] tracking-[0.08em] uppercase px-1.5 py-0.5 border shrink-0 mt-0.5 ${badgeStyle.cls}`}>
-                    {badgeStyle.label}
+                <div class="grid gap-3 items-start" style="grid-template-columns: 7rem 1fr;">
+                  <span class={`font-mono text-[9px] tracking-[0.06em] uppercase px-1.5 py-0.5 border text-center leading-tight ${badge.cls}`}>
+                    {badge.label}
                   </span>
                   <p class="font-serif text-sm text-[#5a5550] leading-relaxed">
                     {pub.authors} &ldquo;{pub.title}.&rdquo;{' '}
