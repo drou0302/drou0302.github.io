@@ -1,8 +1,8 @@
 ---
 intro: Start-up founder with a strong scientific background in protein sciences,
-  flow chemistry and industrial biocatalysis. CEO of
-  [inseit.ch](https://www.inseit.ch) — a biotech startup building AI-driven
-  tools for protein immobilization.
+  flow chemistry and industrial biocatalysis. CEO of inseit.ch
+  (https://www.inseit.ch) — a biotech startup building AI-driven tools for
+  protein immobilization.
 background: My scientific work sits at the intersection of biochemistry and
   computation. I've spent years studying how enzymes behave when attached to
   solid supports — a deceptively hard problem that determines whether a
