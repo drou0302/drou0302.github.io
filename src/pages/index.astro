@@ -9,8 +9,12 @@ const recentPosts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 
-const activeProjects = (await getCollection('projects', ({ data }) => data.status === 'active'))
-  .slice(0, 4);
+const statusOrder: Record<string, number> = { active: 0, paused: 1, completed: 2 };
+const allProjects = (await getCollection('projects'))
+  .sort((a, b) =>
+    (statusOrder[a.data.status] ?? 9) - (statusOrder[b.data.status] ?? 9) ||
+    (b.data.year ?? 0) - (a.data.year ?? 0)
+  );
 
 const categoryColors: Record<string, string> = {
   science:  'text-[#D2E59E] border-[#6D5959]',
@@ -167,40 +171,50 @@ const navLinks = [
     </section>
   )}
 
-  <!-- ── Active work ───────────────────────────────────────── -->
-  {activeProjects.length > 0 && (
+  <!-- ── Projects ────────────────────────────────────────────── -->
+  {allProjects.length > 0 && (
     <section class="max-w-5xl mx-auto px-10 md:px-16 pt-12 pb-24">
 
       <div class="flex items-center gap-4 mb-16">
-        <span class="font-mono text-[9px] text-[#6D5959] tracking-[0.3em] uppercase shrink-0">Active work</span>
+        <span class="font-mono text-[9px] text-[#6D5959] tracking-[0.3em] uppercase shrink-0">Projects</span>
         <div class="flex-1 h-px bg-[#6D5959]"></div>
         <a href="/projects" class="font-mono text-[9px] text-[#FE9000] tracking-[0.2em] uppercase hover:underline shrink-0">All →</a>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-px border border-[#6D5959]">
-        {activeProjects.map(project => (
-          <a
-            href={project.data.link ?? '/projects'}
-            target={project.data.link ? '_blank' : '_self'}
-            rel="noopener noreferrer"
-            class="group block border-[#6D5959] p-8 hover:border-[#FE9000] border transition-colors -m-px"
-          >
-            <div class="flex items-start justify-between gap-4 mb-5">
-              <span class={`font-mono text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 border
-                ${projectTypeColors[project.data.type] ?? 'text-[#9FA0C3] border-[#6D5959]'}`}>
-                {project.data.type}
-              </span>
-              {project.data.year && (
-                <span class="font-mono text-[10px] text-[#6D5959]">{project.data.year}</span>
-              )}
-            </div>
-            <h3 class="font-display text-[1.4rem] font-semibold text-[#D2E59E] group-hover:text-[#FE9000] transition-colors leading-tight mb-3">
-              {project.data.title}
-              {project.data.link && <span class="text-[#6D5959] ml-1">↗</span>}
-            </h3>
-            <p class="font-serif text-sm text-[#9FA0C3] leading-relaxed">{project.data.description}</p>
-          </a>
-        ))}
+        {allProjects.map(project => {
+          const isActive = project.data.status === 'active';
+          return (
+            <a
+              href={project.data.link ?? '/projects'}
+              target={project.data.link ? '_blank' : '_self'}
+              rel="noopener noreferrer"
+              class={`group block border-[#6D5959] p-8 hover:border-[#FE9000] border transition-colors -m-px${!isActive ? ' opacity-60 hover:opacity-100' : ''}`}
+            >
+              <div class="flex items-start justify-between gap-4 mb-5">
+                <div class="flex items-center gap-2">
+                  <span class={`font-mono text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 border
+                    ${projectTypeColors[project.data.type] ?? 'text-[#9FA0C3] border-[#6D5959]'}`}>
+                    {project.data.type}
+                  </span>
+                  {!isActive && (
+                    <span class="font-mono text-[9px] tracking-[0.1em] uppercase text-[#6D5959]">
+                      {project.data.status}
+                    </span>
+                  )}
+                </div>
+                {project.data.year && (
+                  <span class="font-mono text-[10px] text-[#6D5959]">{project.data.year}</span>
+                )}
+              </div>
+              <h3 class="font-display text-[1.4rem] font-semibold text-[#D2E59E] group-hover:text-[#FE9000] transition-colors leading-tight mb-3">
+                {project.data.title}
+                {project.data.link && <span class="text-[#6D5959] ml-1">↗</span>}
+              </h3>
+              <p class="font-serif text-sm text-[#9FA0C3] leading-relaxed">{project.data.description}</p>
+            </a>
+          );
+        })}
       </div>
     </section>
   )}
@@ -252,7 +266,7 @@ const navLinks = [
         const isBio   = i < BIO.length;
         const speed   = isBio ? 0.08 + Math.random() * 0.15 : 0.14 + Math.random() * 0.28;
         const angle   = Math.random() * Math.PI * 2;
-        const baseR   = isBio ? 7 : 1.2 + Math.random() * 1.8;
+        const baseR   = isBio ? 10 : 1.2 + Math.random() * 1.8;
         return {
           x: Math.random() * W, y: Math.random() * H,
           vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed,
