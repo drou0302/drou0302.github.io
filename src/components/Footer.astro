@@ -1,18 +1,28 @@
 ---
 const year = new Date().getFullYear();
+
+const links = [
+  { label: 'Email',     href: 'mailto:davidrourap@gmail.com' },
+  { label: 'GitHub',   href: 'https://github.com/drou0302' },
+  { label: 'Scholar',  href: 'https://scholar.google.com/citations?user=jw7Os3QAAAAJ' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/davidrourap' },
+  { label: 'inseit.ch',href: 'https://www.inseit.ch' },
+];
 ---
-<footer class="border-t border-[#6D5959] py-10 mt-20">
-  <div class="max-w-6xl mx-auto px-8 flex items-center justify-between">
+<footer class="border-t border-[#6D5959] py-10 mt-20 print:hidden">
+  <div class="max-w-6xl mx-auto px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
     <span class="font-mono text-[11px] text-[#9FA0C3] tracking-[0.12em] uppercase">
       © {year} David Roura Padrosa
     </span>
-    <div class="flex gap-6">
-      <a href="https://github.com/drou0302" target="_blank" rel="noopener noreferrer"
-         class="font-mono text-[11px] text-[#9FA0C3] hover:text-[#FE9000] tracking-[0.12em] uppercase transition-colors">GitHub</a>
-      <a href="https://www.linkedin.com/in/davidrourap" target="_blank" rel="noopener noreferrer"
-         class="font-mono text-[11px] text-[#9FA0C3] hover:text-[#FE9000] tracking-[0.12em] uppercase transition-colors">LinkedIn</a>
-      <a href="https://www.inseit.ch" target="_blank" rel="noopener noreferrer"
-         class="font-mono text-[11px] text-[#9FA0C3] hover:text-[#FE9000] tracking-[0.12em] uppercase transition-colors">inseit.ch</a>
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+      {links.map(({ label, href }) => (
+        <a href={href}
+           target={href.startsWith('mailto') ? '_self' : '_blank'}
+           rel="noopener noreferrer"
+           class="font-mono text-[11px] text-[#9FA0C3] hover:text-[#FE9000] tracking-[0.12em] uppercase transition-colors">
+          {label}
+        </a>
+      ))}
     </div>
   </div>
 </footer>

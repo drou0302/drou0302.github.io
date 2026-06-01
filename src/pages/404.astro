@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="404" description="Page not found">
+  <div class="min-h-[80vh] flex flex-col items-center justify-center px-8 text-center">
+
+    <div class="flex items-center gap-4 mb-10">
+      <div class="h-px w-12 bg-[#6D5959]"></div>
+      <span class="font-mono text-[9px] text-[#6D5959] tracking-[0.3em] uppercase">Error 404</span>
+      <div class="h-px w-12 bg-[#6D5959]"></div>
+    </div>
+
+    <p class="font-display font-semibold text-[#D2E59E] leading-none tracking-[-0.03em] mb-8"
+       style="font-size:clamp(6rem,20vw,16rem);">
+      404
+    </p>
+
+    <p class="font-serif text-[#9FA0C3] text-lg mb-2">
+      This residue is missing from the structure.
+    </p>
+    <p class="font-mono text-[10px] text-[#6D5959] tracking-[0.2em] uppercase mb-14">
+      Page not found — it may have folded incorrectly
+    </p>
+
+    <a href="/"
+       class="font-mono text-[10px] tracking-[0.2em] uppercase text-[#D2E59E] border border-[#6D5959] px-6 py-3 hover:bg-[#D2E59E] hover:text-[#000500] transition-all">
+      ← Return home
+    </a>
+
+  </div>
+</BaseLayout>
