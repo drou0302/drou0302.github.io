@@ -59,6 +59,25 @@ collections:
               - { label: Location, name: location, widget: string }
               - { label: Start year, name: start, widget: string }
               - { label: End year, name: end, widget: string }
+          - label: Teaching
+            name: teaching
+            widget: list
+            required: false
+            fields:
+              - { label: Course / Topic, name: course, widget: string }
+              - label: Role
+                name: role
+                widget: select
+                options: [Lecturer, Teaching assistant, Supervisor, Guest lecturer]
+              - { label: Institution, name: institution, widget: string }
+              - label: Level
+                name: level
+                widget: select
+                required: false
+                options: [BSc, MSc, PhD, Postgraduate, Professional]
+              - { label: Start year, name: start, widget: string }
+              - { label: End year, name: end, widget: string }
+              - { label: Description, name: description, widget: text, required: false }
           - label: Publications
             name: publications
             widget: list

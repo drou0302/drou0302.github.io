@@ -73,6 +73,15 @@ const cv = defineCollection({
       year: z.number(),
       type: z.enum(['talk', 'poster', 'invited']),
     })).default([]),
+    teaching: z.array(z.object({
+      course: z.string(),
+      role: z.enum(['Lecturer', 'Teaching assistant', 'Supervisor', 'Guest lecturer']),
+      institution: z.string(),
+      level: z.enum(['BSc', 'MSc', 'PhD', 'Postgraduate', 'Professional']).optional(),
+      start: z.string(),
+      end: z.string(),
+      description: z.string().optional(),
+    })).default([]),
     prizes: z.array(z.object({
       title: z.string(),
       awarded_by: z.string(),
