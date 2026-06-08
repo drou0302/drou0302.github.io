@@ -335,60 +335,113 @@
   ],
   "presentations": [
     {
-      "venue": "Deep Tech Atelier",
-      "location": "Riga, Latvia",
-      "year": 2025,
-      "type": "talk",
-      "title": "Pushing the boundaries of biomanufacturing R&D"
+      "title": "From university to a deep tech spin-off: the inSEIT story",
+      "venue": "PhD Coalition Leadership Lecture Series",
+      "location": "University of Bern, Switzerland",
+      "year": 2026,
+      "type": "invited"
     },
     {
-      "title": "How enzyme immobilization can help in process intensification",
-      "venue": "ISPROCHEM",
-      "location": "Gargnano, Italy",
+      "title": "Startup pitch \u2013 Deep Tech Atelier 2026",
+      "venue": "Deep Tech Atelier",
+      "location": "Riga, Latvia",
+      "year": 2026,
+      "type": "talk"
+    },
+    {
+      "title": "How can we improve enzyme immobilization with in silico tools?",
+      "venue": "Dept. Chemistry, Biochemistry & Pharmaceutical Sciences House Seminar",
+      "location": "University of Bern, Switzerland",
+      "year": 2025,
+      "type": "talk"
+    },
+    {
+      "title": "Swiss International Chemical Sciences (SICS 2025)",
+      "venue": "SICS 2025",
+      "location": "Switzerland",
+      "year": 2025,
+      "type": "talk"
+    },
+    {
+      "title": "Immobilize to go further \u2013 inSEIT AG",
+      "venue": "iCANX Davos Summit",
+      "location": "Davos, Switzerland",
+      "year": 2024,
+      "type": "invited"
+    },
+    {
+      "title": "Data-driven tools for compatible biocatalysis",
+      "venue": "Swiss Biotech Day",
+      "location": "Basel, Switzerland",
+      "year": 2024,
+      "type": "invited"
+    },
+    {
+      "title": "Immobilize to go further \u2013 bioinformatics' role in advancing enzyme immobilization",
+      "venue": "CLASSY Industry Workshop",
       "year": 2023,
       "type": "invited"
     },
     {
-      "title": "Data driven tools for compatible biocatalysis",
-      "venue": "Swiss Biotech Days",
-      "location": "Basel, Switzerland",
-      "year": 2024,
-      "type": "talk"
+      "title": "How enzyme immobilization can help in process intensification",
+      "venue": "ISPROCHEM",
+      "location": "Milan, Italy",
+      "year": 2023,
+      "type": "invited"
     }
   ],
   "prizes": [
     {
-      "title": "Venture Leader Biotech",
-      "awarded_by": "Venture Kick",
-      "year": 2024
+      "title": "Deep Tech Atelier 2026 Prize",
+      "awarded_by": "Deep Tech Atelier / Goal Events",
+      "year": 2026,
+      "description": "Prize awarded at the Deep Tech Atelier startup competition in Riga, Latvia.",
+      "highlight": true
     },
     {
-      "title": "Deep Tech Atelier Hello Tomorrow Prize",
-      "awarded_by": "Hello Tomorrow",
-      "year": 2026
+      "title": "W.A. de Vigier Award \u2013 Finalist",
+      "awarded_by": "W.A. de Vigier Foundation",
+      "year": 2026,
+      "description": "Finalist for one of Switzerland's most prestigious entrepreneurship awards (CHF 100K per winner).",
+      "highlight": true
     },
     {
-      "title": "Nucleate Award",
-      "awarded_by": "Nucleate",
-      "year": 2023
+      "title": "Venture Leaders Biotech",
+      "awarded_by": "VentureLab Switzerland",
+      "year": 2024,
+      "description": "Selected among 10 Swiss deep-tech startups for a week-long investor roadshow in Boston, MA.",
+      "highlight": true
     },
     {
-      "title": "Finalist Venture",
-      "awarded_by": ">>Venture>>",
-      "year": 2024
+      "title": "W.A. de Vigier Award \u2013 Finalist",
+      "awarded_by": "W.A. de Vigier Foundation",
+      "year": 2025,
+      "description": "Finalist for one of Switzerland's most prestigious entrepreneurship awards.",
+      "highlight": false
     },
     {
-      "title": "Finalist Ypsomed Award",
-      "awarded_by": "Ypsomed",
-      "year": 2022
+      "title": "Nucleate Switzerland Activator \u2013 Scientific Excellence & Novel Idea",
+      "awarded_by": "Nucleate Switzerland",
+      "year": 2023,
+      "description": "Two prizes: Scientific Excellence (USD 1,000) and Novel Idea (CHF 6,000).",
+      "highlight": true
     },
     {
-      "title": "Semi-finalist Hello Tomorrow Deep Tech",
-      "awarded_by": "Hello Tomorrow",
-      "year": 2026
+      "title": "YPSOMED Award \u2013 Finalist",
+      "awarded_by": "YPSOMED",
+      "year": 2022,
+      "highlight": false
     }
   ],
   "funding": [
+    {
+      "title": "MSCA Doctoral Network RADICALLY",
+      "funder": "European Commission \u2013 Horizon Europe",
+      "start": "2026",
+      "end": "2030",
+      "role": "Participant",
+      "highlight": true
+    },
     {
       "title": "BRIDGE Proof of Concept",
       "funder": "BRIDGE (Innosuisse)",
@@ -414,5 +467,24 @@
       "role": "Main applicant"
     }
   ],
-  "teaching": []
+  "teaching": [
+    {
+      "course": "MSCA Doctoral Network RADICALLY \u2013 PhD Co-supervision",
+      "role": "Supervisor",
+      "institution": "inSEIT AG / University of Bern",
+      "level": "PhD",
+      "start": "2026",
+      "end": "present",
+      "description": "Co-supervising PhD researchers in the EU Horizon Europe MSCA Doctoral Network RADICALLY consortium (lead: Durham University)."
+    },
+    {
+      "course": "From university to a deep tech spin-off: the inSEIT story",
+      "role": "Guest lecturer",
+      "institution": "University of Bern",
+      "level": "PhD",
+      "start": "2026",
+      "end": "2026",
+      "description": "Keynote lecture for the PhD Coalition Leadership Lecture Series on transitioning from academia to founding a deep-tech startup."
+    }
+  ]
 }
