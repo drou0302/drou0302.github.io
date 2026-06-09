@@ -75,7 +75,7 @@
       "doi": "10.1021/cbe.4c00186"
     },
     {
-      "authors": "Fern\u00e1ndez Regueiro, C.L.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Fernández Regueiro, C.L.; Roura Padrosa, D.; Paradisi, F.",
       "role": "co-corresponding",
       "title": "Biocatalysis in packed-bed reactors: immobilization as an enabling technology",
       "journal": "Comptes Rendus. Chimie",
@@ -83,14 +83,14 @@
       "doi": "10.5802/crchim.386"
     },
     {
-      "authors": "Ben\u00edtez-Mateos, A.I.; Lim, D.; Roura Padrosa, D.; Marchini, V.; Wu, H.; Buono, F.; Paradisi, F.",
+      "authors": "Benítez-Mateos, A.I.; Lim, D.; Roura Padrosa, D.; Marchini, V.; Wu, H.; Buono, F.; Paradisi, F.",
       "title": "Biocatalytic Reduction of Heterocyclic Imines in Continuous Flow with Immobilized Enzymes",
       "journal": "ACS Sustainable Chemistry & Engineering",
       "year": 2025,
       "doi": "10.1021/acssuschemeng.4c09676"
     },
     {
-      "authors": "Pillet, L.; Fern\u00e1ndez Regueiro, C.L.; Busch, M.R.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Pillet, L.; Fernández Regueiro, C.L.; Busch, M.R.; Roura Padrosa, D.; Paradisi, F.",
       "role": "contributing",
       "title": "A novel ene-reductase from Halomonas elongata for flow biocatalytic synthesis",
       "journal": "RSC Advances",
@@ -99,7 +99,7 @@
       "pdb_ids": []
     },
     {
-      "authors": "L\u00f3pez, I.L.; S\u00e1nchez-Costa, M.; Orrego, A.H.; Zeballos, N.; Roura Padrosa, D.; L\u00f3pez-Gallego, F.",
+      "authors": "López, I.L.; Sánchez-Costa, M.; Orrego, A.H.; Zeballos, N.; Roura Padrosa, D.; López-Gallego, F.",
       "role": "contributing",
       "title": "Microtiter Plate Immobilization Screening for Prototyping Heterogeneous Enzyme Cascades",
       "journal": "Angewandte Chemie",
@@ -107,7 +107,7 @@
       "doi": "10.1002/ange.202407411"
     },
     {
-      "authors": "D\u00edaz-Kruik, P.; Roura Padrosa, D.; Hegarty, E.; Lehmann, H.; Snajdrova, R.; Paradisi, F.",
+      "authors": "Díaz-Kruik, P.; Roura Padrosa, D.; Hegarty, E.; Lehmann, H.; Snajdrova, R.; Paradisi, F.",
       "role": "contributing",
       "title": "Solvent Switching in Continuous Multistep Chemoenzymatic Synthesis",
       "journal": "Organic Process Research & Development",
@@ -139,9 +139,9 @@
       "doi": "10.1039/d4su00293h"
     },
     {
-      "authors": "Contaldo, U.; Padrosa, D.R.; Jamet, H\u00e9l\u00e8n.; Albrecht, M.; Paradisi, F.; Le Goff, A.",
+      "authors": "Contaldo, U.; Padrosa, D.R.; Jamet, Hélèn.; Albrecht, M.; Paradisi, F.; Le Goff, A.",
       "title": "Optimising Electrical Interfacing between the Trimeric Copper Nitrite Reductase and Carbon Nanotubes",
-      "journal": "Chemistry \u2013 A European Journal",
+      "journal": "Chemistry – A European Journal",
       "year": 2023,
       "doi": "10.1002/chem.202301351"
     },
@@ -165,14 +165,14 @@
       ]
     },
     {
-      "authors": "Padrosa, D.R.; Ben\u00edtez-Mateos, A.I.; Paradisi, F.",
+      "authors": "Padrosa, D.R.; Benítez-Mateos, A.I.; Paradisi, F.",
       "title": "Back to the future: taking enzymes to the next level of sustainability",
       "journal": "The Biochemist",
       "year": 2022,
       "doi": "10.1042/bio_2022_109"
     },
     {
-      "authors": "Ben\u00edtez-Mateos, A.I.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Benítez-Mateos, A.I.; Roura Padrosa, D.; Paradisi, F.",
       "role": "co-first",
       "title": "Multistep enzyme cascades as a route towards green and sustainable pharmaceutical syntheses",
       "journal": "Nature Chemistry",
@@ -188,7 +188,7 @@
       "doi": "10.3389/frym.2022.684678"
     },
     {
-      "authors": "Ben\u00edtez-Mateos, A.I.; Klein, C.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Benítez-Mateos, A.I.; Klein, C.; Roura Padrosa, D.; Paradisi, F.",
       "role": "contributing",
       "title": "A novel thymidine phosphorylase to synthesize (halogenated) anticancer and antiviral nucleoside drugs",
       "journal": "Catalysis Science & Technology",
@@ -204,7 +204,7 @@
       "doi": "10.1039/d2gc02767d"
     },
     {
-      "authors": "Marchini, V.; Ben\u00edtez-Mateos, A.I.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Marchini, V.; Benítez-Mateos, A.I.; Roura Padrosa, D.; Paradisi, F.",
       "title": "Fusion of Glutamate Dehydrogenase and Formate Dehydrogenase Yields a Bifunctional Efficient Biocatalyst for the Continuous Removal of Ammonia",
       "journal": "Frontiers in Catalysis",
       "year": 2021,
@@ -230,7 +230,7 @@
       "doi": "10.1093/bioinformatics/btab030"
     },
     {
-      "authors": "Ben\u00edtez-Mateos, A.I.; Contente, M.L.; Roura Padrosa, D.; Paradisi, F.",
+      "authors": "Benítez-Mateos, A.I.; Contente, M.L.; Roura Padrosa, D.; Paradisi, F.",
       "role": "co-first",
       "title": "Flow biocatalysis 101: design, development and applications",
       "journal": "Reaction Chemistry & Engineering",
@@ -281,7 +281,7 @@
       "role": "corresponding"
     },
     {
-      "authors": "Roura Padrosa, D.; Ben\u00edtez-Mateos, A.I.; Calvey, L.; Paradisi, F.",
+      "authors": "Roura Padrosa, D.; Benítez-Mateos, A.I.; Calvey, L.; Paradisi, F.",
       "role": "first",
       "title": "Cell-free biocatalytic syntheses of L-pipecolic acid",
       "journal": "Green Chemistry",
@@ -292,9 +292,9 @@
       ]
     },
     {
-      "authors": "Roura Padrosa, D.; Alaux, R.; Smith, P.; Dreveny, I.; L\u00f3pez-Gallego, F.; Paradisi, F.",
+      "authors": "Roura Padrosa, D.; Alaux, R.; Smith, P.; Dreveny, I.; López-Gallego, F.; Paradisi, F.",
       "role": "first",
-      "title": "Enhancing PLP-Binding Capacity of Class-III \u03c9-Transaminase",
+      "title": "Enhancing PLP-Binding Capacity of Class-III ω-Transaminase",
       "journal": "Frontiers in Bioengineering and Biotechnology",
       "year": 2019,
       "doi": "10.3389/fbioe.2019.00282",
@@ -311,7 +311,7 @@
       "doi": "10.3390/catal9030232"
     },
     {
-      "authors": "Roura Padrosa, D.; Castro, J.; Romero-Casa\u00f1as, A.; Rib\u00f3, M.; Vilanova, M.; Benito, A.",
+      "authors": "Roura Padrosa, D.; Castro, J.; Romero-Casañas, A.; Ribó, M.; Vilanova, M.; Benito, A.",
       "role": "first",
       "title": "Construction of Highly Stable Cytotoxic Nuclear-Directed Ribonucleases",
       "journal": "Molecules",
@@ -342,7 +342,7 @@
       "type": "invited"
     },
     {
-      "title": "Startup pitch \u2013 Deep Tech Atelier 2026",
+      "title": "Startup pitch – Deep Tech Atelier 2026",
       "venue": "Deep Tech Atelier",
       "location": "Riga, Latvia",
       "year": 2026,
@@ -363,7 +363,7 @@
       "type": "talk"
     },
     {
-      "title": "Immobilize to go further \u2013 inSEIT AG",
+      "title": "Immobilize to go further – inSEIT AG",
       "venue": "iCANX Davos Summit",
       "location": "Davos, Switzerland",
       "year": 2024,
@@ -377,7 +377,7 @@
       "type": "invited"
     },
     {
-      "title": "Immobilize to go further \u2013 bioinformatics' role in advancing enzyme immobilization",
+      "title": "Immobilize to go further – bioinformatics' role in advancing enzyme immobilization",
       "venue": "CLASSY Industry Workshop",
       "year": 2023,
       "type": "invited"
@@ -399,7 +399,7 @@
       "highlight": true
     },
     {
-      "title": "W.A. de Vigier Award \u2013 Finalist",
+      "title": "W.A. de Vigier Award – Finalist",
       "awarded_by": "W.A. de Vigier Foundation",
       "year": 2026,
       "description": "Finalist for one of Switzerland's most prestigious entrepreneurship awards (CHF 100K per winner).",
@@ -413,21 +413,21 @@
       "highlight": true
     },
     {
-      "title": "W.A. de Vigier Award \u2013 Finalist",
+      "title": "W.A. de Vigier Award – Finalist",
       "awarded_by": "W.A. de Vigier Foundation",
       "year": 2025,
       "description": "Finalist for one of Switzerland's most prestigious entrepreneurship awards.",
       "highlight": false
     },
     {
-      "title": "Nucleate Switzerland Activator \u2013 Scientific Excellence & Novel Idea",
+      "title": "Nucleate Switzerland Activator – Scientific Excellence & Novel Idea",
       "awarded_by": "Nucleate Switzerland",
       "year": 2023,
       "description": "Two prizes: Scientific Excellence (USD 1,000) and Novel Idea (CHF 6,000).",
       "highlight": true
     },
     {
-      "title": "YPSOMED Award \u2013 Finalist",
+      "title": "YPSOMED Award – Finalist",
       "awarded_by": "YPSOMED",
       "year": 2022,
       "highlight": false
@@ -436,7 +436,7 @@
   "funding": [
     {
       "title": "MSCA Doctoral Network RADICALLY",
-      "funder": "European Commission \u2013 Horizon Europe",
+      "funder": "European Commission – Horizon Europe",
       "start": "2026",
       "end": "2030",
       "role": "Participant",
@@ -469,7 +469,7 @@
   ],
   "teaching": [
     {
-      "course": "MSCA Doctoral Network RADICALLY \u2013 PhD Co-supervision",
+      "course": "MSCA Doctoral Network RADICALLY – PhD Co-supervision",
       "role": "Supervisor",
       "institution": "inSEIT AG / University of Bern",
       "level": "PhD",
@@ -485,6 +485,14 @@
       "start": "2026",
       "end": "2026",
       "description": "Keynote lecture for the PhD Coalition Leadership Lecture Series on transitioning from academia to founding a deep-tech startup."
+    },
+    {
+      "course": "Protein Bioinformatics",
+      "role": "Lecturer",
+      "institution": "University of Bern",
+      "level": "MSc",
+      "start": "2023",
+      "end": "2025"
     }
   ]
 }
